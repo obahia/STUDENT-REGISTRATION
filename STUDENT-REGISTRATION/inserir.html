@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Aluno</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #333;
+            margin-top: 0;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.9em;
+            color: #555;
+            margin-left: -4px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: border-color 0.3s ease;
+            margin-left: -8px;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 3px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Cadastro de Aluno</h1>
+
+    <form action="registar_aluno.php" method="post">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required min="0">
+        </div>
+        <div>
+            <label for="number">Ano:</label>
+            <input type="number" id="ano" name="ano">
+        </div>
+        <div>
+            <label for="text">Turma:</label>
+            <input type="text" id="turma" name="turma" pattern="[A-Za-z]+" title="Insira apenas letras">
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required min="0">
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required min="8">
+            </div>
+
+            <div>
+                <label for="confirmed-password">Confirm password:</label>
+                <input type="password" id="confirmed-password" name="confirmedpassword" minlength="8">
+            </div>
+
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+
+        </div>
+    </form>
+    <div>
+        <a href="visualizar.php">
+            <button type="button">Visualizar BD</button>
+        </a>
+    </div>
+
+</body>
+
+</html>
